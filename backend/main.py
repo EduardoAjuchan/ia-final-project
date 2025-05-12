@@ -14,9 +14,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/")
 def read_root():
     return {"message": "API de análisis de imágenes con Gemini activa"}
+
 
 @app.post("/analizar-imagen")
 async def analizar_imagen(file: UploadFile = File(...)):
